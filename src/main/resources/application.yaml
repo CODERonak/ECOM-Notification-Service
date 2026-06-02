@@ -1,0 +1,11 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: notification-service
+
+# Using local db for development purposes
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/NOTIFICATION
