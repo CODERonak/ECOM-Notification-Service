@@ -9,3 +9,15 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/NOTIFICATION
+
+  mail:
+    host: ${HOST_MAIL}
+    port: 587
+    username: ${APP_USERNAME}
+    password: ${APP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true    
