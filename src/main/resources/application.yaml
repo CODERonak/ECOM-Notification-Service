@@ -21,3 +21,10 @@ spring:
           auth: true
           starttls:
             enable: true    
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL} 
