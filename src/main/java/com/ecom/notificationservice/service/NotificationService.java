@@ -3,6 +3,7 @@ package com.ecom.notificationservice.service;
 import java.time.Instant;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ import lombok.extern.slf4j.Slf4j;
 public class NotificationService {
     private final NotificationLogRepository notificationRepository;
     private final JavaMailSender mailSender;
+
+    @Value("${spring.mail.email}") 
+    private String fromEmail;
 
     public String sendNotification(NotificationRequest request) {
         if (request.getToEmail() == null || request.getToEmail().isBlank()) {
@@ -44,7 +48,7 @@ public class NotificationService {
             mailMessage.setTo(request.getToEmail());
             mailMessage.setSubject(request.getSubject());
             mailMessage.setText(request.getMessage());
-            mailMessage.setFrom("${FROM_MAIL}");
+            mailMessage.setFrom(fromEmail);
 
             mailSender.send(mailMessage);
 

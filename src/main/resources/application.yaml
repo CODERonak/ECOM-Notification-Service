@@ -5,16 +5,18 @@ spring:
   application:
     name: notification-service
 
-# Using local db for development purposes
   data:
     mongodb:
-      uri: mongodb://localhost:27017/NOTIFICATION
+      uri: ${MONGODB_URI}
+      database: NOTIFICATIONS
+      auto-index-creation: true
 
   mail:
     host: ${HOST_MAIL}
     port: 587
     username: ${APP_USERNAME}
     password: ${APP_PASSWORD}
+    email: ${FROM_MAIL}
     properties:
       mail:
         smtp:
