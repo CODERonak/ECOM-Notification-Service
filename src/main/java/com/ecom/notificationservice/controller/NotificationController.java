@@ -44,9 +44,9 @@ public class NotificationController {
         return ResponseEntity.ok(notificationService.getHistoryForUser(email));
     }
 
-    @GetMapping("/all")
-    @Operation(summary = "Get all logs", description = "Admin endpoint to view all notification logs.")
-    public ResponseEntity<List<NotificationLog>> getAllLogs() {
-        return ResponseEntity.ok(notificationService.getAllLogs());
-    }
+    // @GetMapping("/all")
+    // @Operation(summary = "Get all logs", description = "Admin endpoint to view all notification logs.")
+    // public ResponseEntity<List<NotificationLog>> getAllLogs() {
+    //     return ResponseEntity.ok(notificationService.getAllLogs());
+    // }
 }
