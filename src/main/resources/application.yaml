@@ -7,26 +7,19 @@ spring:
 
   data:
     mongodb:
-      uri: ${MONGODB_URI}
+      uri: ${NOTIFICATIONS_SERVICE_MONGODB_URI}
       database: NOTIFICATIONS
       auto-index-creation: true
 
   mail:
-    host: ${HOST_MAIL}
+    host: ${NOTIFICATIONS_SERVICE_HOST_MAIL}
     port: 587
-    username: ${APP_USERNAME}
-    password: ${APP_PASSWORD}
-    email: ${FROM_MAIL}
+    username: ${NOTIFICATIONS_SERVICE_APP_USERNAME}
+    password: ${NOTIFICATIONS_SERVICE_APP_PASSWORD}
+    email: ${NOTIFICATIONS_SERVICE_FROM_MAIL}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true    
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_SERVER_URL} 
